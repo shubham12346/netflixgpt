@@ -9,7 +9,10 @@ const LoginForm = () => {
   const password = useRef(null);
   const email = useRef(null);
 
-  const handleSubmit = (e) => {};
+  const handleSubmit = (e) => {
+    setIsSignUpForm(true);
+  };
+
   return (
     <div>
       <form action="" onSubmit={handleSubmit}>
