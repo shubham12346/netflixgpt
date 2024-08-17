@@ -1,4 +1,9 @@
 {
   "signIn": "Sign In",
-  "singUp": "Sign Up"
+  "signUp": "Sign Up",
+  "newLogin": "New to Netflix?",
+  "alreadyHaveAnAccount": "Already Have an Account?",
+  "username": "Enter user name ",
+  "email": "Email",
+  "password": "Password"
 }
