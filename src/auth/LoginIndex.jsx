@@ -13,7 +13,7 @@ const LoginIndex = () => {
       <div className="absolute h-36">
         <NetflixLogo />
       </div>
-      <div className=" md:w-1/2 lg:w-3/12 bg-black opacity-85 absolute mt-36  left-1/2 transform -translate-x-1/2 ">
+      <div className=" md:w-1/2 lg:w-3/12 bg-black opacity-85 absolute mt-24  left-1/2 transform -translate-x-1/2 ">
         <LoginForm />
       </div>
     </div>
