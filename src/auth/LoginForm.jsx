@@ -1,8 +1,9 @@
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  onAuthStateChanged,
 } from "firebase/auth";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import "./login.css";
 import { checkEmailAndPassword, auth } from "./util";
@@ -70,7 +71,6 @@ const LoginForm = () => {
         };
         dispatch({ type: "user/addUser", payload: user });
         setError("");
-        navigate("/browse");
       })
       .catch((error) => {
         const errorMessage = error.message;
@@ -81,6 +81,17 @@ const LoginForm = () => {
   const handleFormChange = () => {
     setIsSignUpForm((prev) => !prev);
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate("/browse");
+      } else {
+        navigate("/login");
+      }
+    });
+    return () => unsubscribe();
+  }, []);
 
   return (
     <div>

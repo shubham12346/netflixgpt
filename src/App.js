@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { app } from "./auth/firebase-config";
 import { RouterProvider } from "react-router-dom";
 import { AppRouter } from "./AppRouter";
