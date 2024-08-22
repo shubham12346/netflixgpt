@@ -5,6 +5,7 @@ import useMovies from "./hooks/useMovies";
 import useMovieId from "./hooks/useMovieId";
 import PlayButton from "./PlayButton";
 import BackgroundPlay from "./BackgroundPlay";
+import MovieSuggestion from "./MovieSuggestion";
 
 const BrowseIndex = () => {
   const movies = useSelector((state) => state.movies.movies);
@@ -17,14 +18,15 @@ const BrowseIndex = () => {
   }
   return (
     <div className="relative">
-      <BackgroundPlay trailer={trailer} />
       <Header />
-      <div className="absolute bg-gray- w-1/3 h-48 top-[20%] left-20">
+      <div className="absolute bg-gray- w-1/3 h-48 top-[7%] left-20">
         <PlayButton
           imageSrc={movies[0]?.poster_path}
           description={movies[0]?.overview}
         />
       </div>
+      <BackgroundPlay trailer={trailer} />
+      <MovieSuggestion movies={movies} />
     </div>
   );
 };
