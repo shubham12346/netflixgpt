@@ -4,28 +4,26 @@ import Header from "./Header";
 import useMovies from "./hooks/useMovies";
 import useMovieId from "./hooks/useMovieId";
 import PlayButton from "./PlayButton";
+import BackgroundPlay from "./BackgroundPlay";
 
 const BrowseIndex = () => {
-  const movies = useSelector((state) => state.movies);
-
+  const movies = useSelector((state) => state.movies.movies);
   useMovies();
   const { trailer } = useMovieId(movies[0]?.id);
+
+  console.log("movies items", movies);
+  if (!movies) {
+    return;
+  }
   return (
-    <div className="">
+    <div className="relative">
+      <BackgroundPlay trailer={trailer} />
       <Header />
-      <div className="w-[100%]">
-        <iframe
-          className=" overflow-hidden w-[100%] h-screen  absolute"
-          src={`https://www.youtube.com/embed/${trailer}?autoplay=1&mute=1`}
-          title="YouTube video player"
-          allowFullScreen
-          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture;
- web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-        ></iframe>
-      </div>
-      <div className="absolute bg-gray-700 w-1/3 h-48 top-[50%] left-20">
-        <PlayButton />
+      <div className="absolute bg-gray- w-1/3 h-48 top-[20%] left-20">
+        <PlayButton
+          imageSrc={movies[0]?.poster_path}
+          description={movies[0]?.overview}
+        />
       </div>
     </div>
   );

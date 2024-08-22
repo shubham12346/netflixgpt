@@ -8,7 +8,6 @@ const useMovies = () => {
     try {
       const res = await fetch(MOVIES_LIST, API_OPTIONS);
       const data = await res.json();
-      console.log("data", data?.results);
       if (data?.results?.length > 0) {
         dispatch({ type: "movies/addMovies", payload: [...data?.results] });
       }
