@@ -18,3 +18,7 @@ export const IMAGE_URL = `https://api.themoviedb.org/3/movie/`;
 export const IMAGE_URL_END = `/images`;
 
 export const IMAGE_PATH = `https://image.tmdb.org/t/p/original/`;
+export const queryStart = `Please provide a single-line JSON array of 5 `;
+export const queryEnd = `movies, without newline characters or additional text. `;
+
+export const searchURl = `https://api.themoviedb.org/3/search/movie?query=`;

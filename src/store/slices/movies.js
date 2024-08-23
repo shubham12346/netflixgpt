@@ -2,6 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
   movies: [],
+  recommendedMovies: [],
+  allMatchedMovie: [],
 };
 const movieSlice = createSlice({
   name: "movies",
@@ -13,8 +15,19 @@ const movieSlice = createSlice({
     removeMovies: (state, action) => {
       return null;
     },
+    addRecommendedMoviesFromGemini: (state, action) => {
+      state.recommendedMovies = action.payload;
+    },
+    allSuggestedMovieMatchedWithGeminiSearch: (state, action) => {
+      state.allMatchedMovie = action.payload;
+    },
   },
 });
 
-export const { addMovies, removeMovies } = movieSlice?.actions;
+export const {
+  addMovies,
+  removeMovies,
+  addRecommendedMoviesFromGemini,
+  allSuggestedMovieMatchedWithGeminiSearch,
+} = movieSlice?.actions;
 export default movieSlice?.reducer;

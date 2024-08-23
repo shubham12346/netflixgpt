@@ -1,6 +1,7 @@
 import { getAuth } from "firebase/auth";
 
 export const auth = getAuth();
+// Initialize the Vertex AI service
 // createUserWithEmailAndPassword(auth, email, password)
 //   .then((userCredential) => {
 //     // Signed up
