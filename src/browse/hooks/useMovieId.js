@@ -15,11 +15,9 @@ const useMovieId = (movieId) => {
         API_OPTIONS
       );
       const data = await res.json();
-      console.log("data", data);
       const trailers = data?.results?.filter(
         (movieVideo) => movieVideo?.type === VIDEO_TYPE
       );
-      console.log("trailers", trailers);
       if (trailers) {
         setTrailer(trailers[0]?.key);
       }
@@ -27,7 +25,6 @@ const useMovieId = (movieId) => {
   };
 
   useEffect(() => {
-    console.log("movieId", movieId);
     fetchMovieVideos(movieId);
   }, [movieId]);
 
