@@ -1,22 +1,27 @@
 import { useDispatch } from "react-redux";
-import { searchURl } from "../constant";
+import { API_OPTIONS, searchURl } from "../constant";
 import { useEffect } from "react";
 
 const useAIToShowMovie = (movies) => {
   const dispatch = useDispatch();
   console.log("movies", movies);
 
-  const searchTheMoviesRelated = (movieName) => {
-    const res = fetch(`${searchURl}${movieName}`);
-    return res;
+  const searchTheMoviesRelated = async (movieName) => {
+    try {
+      const res = await fetch(`${searchURl}${movieName}`, API_OPTIONS);
+      const data = await res.json(); // Await the JSON parsing
+      console.log("data?.results", data.results); // Log the actual results
+      return data.results; // Return the results
+    } catch (error) {
+      console.error("Error fetching movie data:", error);
+      return undefined; // Handle errors gracefully
+    }
   };
 
   const searchAll = async (movies) => {
-    console.log("movies mapping", movies);
-    const allMovies = movies.map((movieName) => {
-      console.log("movies name", movieName);
-      return movieName;
-    });
+    const allMovies = movies.map((movieName) =>
+      searchTheMoviesRelated(movieName)
+    );
     console.log("allMovies", allMovies);
     const res = await Promise.all(allMovies);
     console.log("res", res);
@@ -28,7 +33,7 @@ const useAIToShowMovie = (movies) => {
 
   useEffect(() => {
     if (movies.length > 0) {
-      //   searchAll(movies);
+      searchAll(movies);
     }
   }, [movies]);
 };

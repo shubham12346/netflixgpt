@@ -2,8 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
   movies: [],
-  recommendedMovies: [],
+  recommendedMovies: [
+    "The Shawshank Redemption",
+    "The Godfather",
+    "The Dark Knight",
+    "Pulp Fiction",
+    "Inception",
+  ],
   allMatchedMovie: [],
+  errorMessage: "",
 };
 const movieSlice = createSlice({
   name: "movies",
@@ -21,6 +28,12 @@ const movieSlice = createSlice({
     allSuggestedMovieMatchedWithGeminiSearch: (state, action) => {
       state.allMatchedMovie = action.payload;
     },
+    setErrorMessage: (state, action) => {
+      state.errorMessage = action.payload;
+    },
+    removeErrorMessage: (state) => {
+      state.errorMessage = "";
+    },
   },
 });
 
@@ -29,5 +42,7 @@ export const {
   removeMovies,
   addRecommendedMoviesFromGemini,
   allSuggestedMovieMatchedWithGeminiSearch,
+  setErrorMessage,
+  removeErrorMessage,
 } = movieSlice?.actions;
 export default movieSlice?.reducer;

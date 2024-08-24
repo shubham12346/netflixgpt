@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { chatSession } from "./GeminiAI";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { queryEnd, queryStart } from "./constant";
 import AIRecommendedMovie from "./AIRecommendedMovie";
+import RecommendedSuggestions from "./RecommendedSuggestions";
+import ShowErrorMessage from "./ShowErrorMessage";
 const SearchIndex = () => {
+  const errorMessage = useSelector((state) => state.movies.errorMessage);
   const [searchText, setSearchText] = useState("");
   const dispatch = useDispatch();
   const { t } = useTranslation("login");
@@ -15,29 +18,40 @@ const SearchIndex = () => {
 
   const findSearchedMovies = async () => {
     const query = `${queryStart}${searchText} ${queryEnd}`;
-    const res = await chatSession.sendMessage(query);
-    console.log(res.response?.text());
-    const results = res.response?.text();
-    const ans = results.split(","); // Split by a comma or another delimiter
+    try {
+      const res = await chatSession.sendMessage(query);
+      console.log(res.response?.text());
+      const result = res.response.text();
+      const result1 = JSON.parse(result);
+      dispatch({
+        type: "movies/addRecommendedMoviesFromGemini",
+        payload: result1,
+      });
+      setErrorMessage("");
+    } catch (error) {
+      console.error(error.message);
+      setErrorMessage(error.message);
+    }
 
-    console.log("ans", ans);
-
-    dispatch({
-      type: "movies/addRecommendedMoviesFromGemini",
-      payload: results,
-    });
     console.log("query:", query);
   };
 
+  const setErrorMessage = (msg) => {
+    dispatch({
+      type: "movies/setErrorMessage",
+      payload: msg,
+    });
+  };
   return (
-    <div className="relative">
-      <div className="pt-24 flex justify-center items-center ">
-        <div className="flex p-3 bg-black w-2/6">
+    <div className="relative ">
+      <div className="pt-24 flex justify-center items-center bg-black ">
+        <div className="flex p-3 bg-black w-3/6">
           <input
             type="text"
             onChange={handleChange}
-            className="border-2 border-white py-3 px-6 text-lg font-semibold mr-10 w-4/5"
+            className="border-2 border-white py-3 px-6 text-lg font-semibold mr-10 w-5/6 bg-slate-700 text-white"
             value={searchText}
+            placeholder={t("searchPlaceholder")}
           />
           <div>
             <button
@@ -45,12 +59,18 @@ const SearchIndex = () => {
               type="button"
               onClick={findSearchedMovies}
             >
-              {t("search")}
+              {t("searchBtn")}
             </button>
           </div>
         </div>
       </div>
-      <div>
+      <div className="bg-black">
+        <ShowErrorMessage errorMessage={errorMessage} />
+      </div>
+      <div className="bg-black pt-10 pl-16">
+        <RecommendedSuggestions />
+      </div>
+      <div className="bg-black   pb-20">
         <AIRecommendedMovie />
       </div>
     </div>

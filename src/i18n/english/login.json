@@ -5,5 +5,8 @@
   "alreadyHaveAnAccount": "Already Have an Account?",
   "username": "Enter user name ",
   "email": "Email",
-  "password": "Password"
+  "password": "Password",
+  "searchBtn": "Search",
+  "searchPlaceholder": "Search with Gemini AI ",
+  "suggestedMovies": "Suggested Movies"
 }

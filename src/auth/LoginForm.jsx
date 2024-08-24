@@ -106,7 +106,7 @@ const LoginForm = () => {
             <input
               type="text"
               name="username"
-              className="p-2 my-2 bg-black opacity-70 border-2 border-white  w-full"
+              className="p-2 my-2   border-2 border-white  w-full bg-slate-700 "
               placeholder="Enter your name"
               ref={name}
               autoComplete="off"
@@ -118,7 +118,7 @@ const LoginForm = () => {
             <input
               type="email"
               name="email"
-              className="p-2 my-2 bg-black opacity-70 border-2  w-full"
+              className="p-2 my-2 bg-black opacity-70 border-2  w-full bg-slate-700"
               placeholder="Enter your email "
               ref={email}
               autoComplete="off"
@@ -131,7 +131,7 @@ const LoginForm = () => {
               type="password"
               name="password"
               id=""
-              className="p-2 my-2  bg-black opacity-70border-2 border-white  w-full"
+              className="p-2 my-2  bg-black opacity-70border-2 border-white  w-full bg-slate-700"
               ref={password}
               placeholder="Enter your password "
               autoComplete="off"

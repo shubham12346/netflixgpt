@@ -30,3 +30,24 @@ export const checkEmailAndPassword = (email, password) => {
   }
   return null;
 };
+
+export function cleanStringList(stringList) {
+  // Join the array into a single string
+  let combinedString = stringList.join("");
+
+  // Remove newline characters
+  combinedString = combinedString.replace(/\n/g, "");
+
+  // Ensure spaces after commas are consistent
+  // Convert the cleaned string back to an array
+  // let resultArray;
+  // try {
+  //   resultArray = JSON.parse(combinedString);
+  // } catch (e) {
+  //   console.error("Error parsing JSON:", e);
+  //   return [];
+  // }
+  let newArr = combinedString?.split(",");
+  console.log("newArr");
+  return newArr;
+}

@@ -5,9 +5,11 @@ const MovieList = ({ MovieList, title }) => {
   return (
     <div>
       <div className="text-white text-xl font-bold">{title}</div>
-      <div className="flex flex-row  w-full overflow-auto my-2">
+      <div className="flex flex-row  w-full overflow-auto my-2 scrollbar-thin scrollbar-thumb-slate-700 scrollbar-track-slate-300">
         {MovieList?.map((item) => (
-          <MoviePoster key={item?.poster_path} imagePath={item?.poster_path} />
+          <div key={item?.poster_path} className="mx-2">
+            <MoviePoster imagePath={item?.poster_path} />
+          </div>
         ))}
       </div>
     </div>
