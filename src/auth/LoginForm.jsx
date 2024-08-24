@@ -96,7 +96,7 @@ const LoginForm = () => {
   return (
     <div>
       <form action="" onSubmit={handleSubmit}>
-        <div className="md:h-[80vh] flex flex-col p-5 text-white">
+        <div className="h-[70%] md:h-[80vh] flex flex-col p-5 text-white">
           <div className="text-white py-4 text-xl font-bold">
             {isSignUpForm ? t("signUp") : t("signIn")}
           </div>

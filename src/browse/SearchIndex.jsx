@@ -44,7 +44,7 @@ const SearchIndex = () => {
   };
   return (
     <div className="relative">
-      <div className="pt-36 md:pt-24   flex sm:flex-col md:flex-row justify-center items-center bg-black w-screen ">
+      <div className="pt-36 md:pt-24   flex sm:flex-col md:flex-row justify-center items-center bg-black w-[100%] ">
         <div className="   flex flex-col md:flex-row  p-3 bg-black w-full  md:w-3/6">
           <input
             type="text"
