@@ -21,7 +21,7 @@ const Header = () => {
     dispatch(changeTab(!tab));
   };
   return (
-    <div className="flex justify-between align-middle items-center px-20 bg-black bg-gradient-to-br ">
+    <div className="flex flex-col pb-10 md:flex-row justify-between align-middle items-center px-20 bg-black bg-gradient-to-br ">
       <div className="">
         <NetflixLogo className={"h-20"} />
       </div>

@@ -43,19 +43,19 @@ const SearchIndex = () => {
     });
   };
   return (
-    <div className="relative ">
-      <div className="pt-24 flex justify-center items-center bg-black ">
-        <div className="flex p-3 bg-black w-3/6">
+    <div className="relative">
+      <div className="pt-36 md:pt-24   flex sm:flex-col md:flex-row justify-center items-center bg-black w-screen ">
+        <div className="   flex flex-col md:flex-row  p-3 bg-black w-full  md:w-3/6">
           <input
             type="text"
             onChange={handleChange}
-            className="border-2 border-white py-3 px-6 text-lg font-semibold mr-10 w-5/6 bg-slate-700 text-white"
+            className="mt-5 border-2 border-white py-3 px-6 text-lg font-semibold mr-10 w-full md:w-5/6 bg-slate-700 text-white my-2"
             value={searchText}
             placeholder={t("searchPlaceholder")}
           />
-          <div>
+          <div className="">
             <button
-              className=" text-white text-2xl py-3 px-6 bg-red-600 rounded hover:bg-red-900"
+              className="mt-5  text-white text-2xl py-3 px-6 bg-red-600 rounded hover:bg-red-900"
               type="button"
               onClick={findSearchedMovies}
             >

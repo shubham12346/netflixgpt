@@ -10,7 +10,7 @@ const RecommendedSuggestions = () => {
   return (
     <div className="text-white py-4 ">
       <div className="text-3xl font-bold ">{t("suggestedMovies")}</div>
-      <div className="flex ">
+      <div className=" md:flex  overflow-x-hidden">
         {recommendedMovies?.map((movie, index) => (
           <div
             key={`${index}-${movie}`}

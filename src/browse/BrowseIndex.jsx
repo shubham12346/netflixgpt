@@ -23,7 +23,7 @@ const BrowseIndex = () => {
       </div>
       {tab ? (
         <>
-          <div className="absolute bg-gray- w-1/3 h-48 top-[7%] left-20">
+          <div className=" hidden lg:block absolute bg-gray- w-1/3 h-48 top-[7%] left-20">
             <PlayButton
               imageSrc={movies[0]?.poster_path}
               description={movies[0]?.overview}
