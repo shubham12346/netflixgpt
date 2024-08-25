@@ -1,0 +1,16 @@
+{
+  "signIn": "Iniciar sesión",
+  "signUp": "Regístrate",
+  "newLogin": "¿Nuevo en Netflix?",
+  "alreadyHaveAnAccount": "¿Ya tienes una cuenta?",
+  "username": "Ingrese nombre de usuario",
+  "email": "Correo electrónico",
+  "password": "Contraseña",
+  "searchBtn": "Buscar",
+  "searchPlaceholder": "Buscar con Gemini AI",
+  "suggestedMovies": "Películas sugeridas",
+  "logout": "Cerrar sesión",
+  "gptSearch": "Búsqueda GPT",
+  "homepage": "Página principal",
+  "language": "Idioma"
+}

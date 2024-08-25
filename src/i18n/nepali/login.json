@@ -1,6 +1,16 @@
 {
   "signIn": "साइन इन गर्नुहोस्",
   "signUp": "साइन अप गर्नुहोस्",
-  "newLogin": "Netflix मा नयाँ?",
-  "alreadyHaveAnAccount": "पहिले नै साइन अप?"
+  "newLogin": "नेटफ्लिक्समा नयाँ हुनुहुन्छ?",
+  "alreadyHaveAnAccount": "पहिले नै खाता छ?",
+  "username": "प्रयोगकर्ता नाम प्रविष्ट गर्नुहोस्",
+  "email": "इमेल",
+  "password": "पासवर्ड",
+  "searchBtn": "खोज्नुहोस्",
+  "searchPlaceholder": "जेमिनी एआईसँग खोज्नुहोस्",
+  "suggestedMovies": "सुझाव गरिएका चलचित्रहरू",
+  "logout": "लगआउट",
+  "gptSearch": "जीपीटी खोज",
+  "homepage": "गृहपृष्ठ",
+  "language": "भाषा"
 }

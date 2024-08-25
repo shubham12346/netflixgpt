@@ -8,5 +8,9 @@
   "password": "Password",
   "searchBtn": "Search",
   "searchPlaceholder": "Search with Gemini AI ",
-  "suggestedMovies": "Suggested Movies"
+  "suggestedMovies": "Suggested Movies",
+  "logout": "Logout",
+  "gptSearch": "GPT Search",
+  "homepage": "Homepage",
+  "language": "Language"
 }

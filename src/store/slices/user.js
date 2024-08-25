@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
   user: null,
+  language: "english",
 };
 const userSlice = createSlice({
   name: "user",
@@ -15,8 +16,13 @@ const userSlice = createSlice({
     removeUser: (state) => {
       return null;
     },
+    userLanguage: (state, action) => {
+      state.language = action.payload;
+      console.log("action.payload", action.payload);
+      localStorage.setItem("language", action.payload);
+    },
   },
 });
 
-export const { addUser, removeUser } = userSlice.actions;
+export const { addUser, removeUser, userLanguage } = userSlice.actions;
 export default userSlice.reducer;

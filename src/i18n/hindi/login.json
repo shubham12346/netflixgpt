@@ -1,0 +1,16 @@
+{
+  "signIn": "साइन इन करें",
+  "signUp": "साइन अप करें",
+  "newLogin": "नेटफ्लिक्स पर नए हैं?",
+  "alreadyHaveAnAccount": "क्या आपके पास पहले से ही एक खाता है?",
+  "username": "उपयोगकर्ता नाम दर्ज करें",
+  "email": "ईमेल",
+  "password": "पासवर्ड",
+  "searchBtn": "खोजें",
+  "searchPlaceholder": "जेमिनी एआई के साथ खोजें",
+  "suggestedMovies": "सुझाए गए फिल्में",
+  "logout": "लॉगआउट",
+  "gptSearch": "जीपीटी खोज",
+  "homepage": "मुखपृष्ठ",
+  "language": "भाषा"
+}
