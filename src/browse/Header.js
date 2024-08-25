@@ -59,7 +59,7 @@ const Header = () => {
           </select>
         </div>
         <div
-          className="px-2 py-2 rounded w-[100%] text-nowrap  bg-red-700  mx-10 hover:bg-red-500"
+          className="px-2 py-2 rounded w-[250px] text-nowrap  bg-red-700  mx-10 hover:bg-red-500"
           onClick={handleTabChange}
         >
           {tab ? t("gptSearch") : t("homepage")}
